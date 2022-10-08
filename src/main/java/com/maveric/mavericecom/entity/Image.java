@@ -13,12 +13,16 @@ import java.util.Date;
 @Getter
 @Setter
 public class Image {
+
     @Id
     private Long id;
+
     private String type;
     private String url;
+
     @Lob
-    private Byte[] photo;
+    private byte[] photo;
+
     private Date createdAt;
     private Date updatedAt;
 
