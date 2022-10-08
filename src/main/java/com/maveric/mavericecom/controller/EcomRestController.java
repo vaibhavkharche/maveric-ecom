@@ -3,7 +3,6 @@ package com.maveric.mavericecom.controller;
 import com.maveric.mavericecom.entity.Category;
 import com.maveric.mavericecom.entity.User;
 import com.maveric.mavericecom.service.EcomAppService;
-import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,6 @@ public class EcomRestController {
     private EcomAppService ecomAppService;
 
     @GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
-    @Operation(tags = "users", description = "Returns all users")
     public ResponseEntity<Object> getAllUsers() {
         log.info("getting all users");
         return new ResponseEntity<>(ecomAppService.getAllUsers(), HttpStatus.OK);
@@ -32,7 +30,6 @@ public class EcomRestController {
     }
 
     @GetMapping("/image/{id}")
-    @Operation(tags = "image", description = "Get image by id")
     public byte[] getImage(@PathVariable("id") Long imageId) {
         return ecomAppService.getImage(imageId);
     }

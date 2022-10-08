@@ -14,12 +14,16 @@ import java.util.List;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String firstName;
     private String middleName;
     private String lastName;
+
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
+
     private String employeeId;
     private String email;
     private String phoneNumber;

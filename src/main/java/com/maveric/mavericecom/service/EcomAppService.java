@@ -64,4 +64,5 @@ public class EcomAppService {
     public List<Comment> getCommentsByUser(Long userId) {
         return commentRepository.findAllByCommentedById(userId);
     }
+
 }
